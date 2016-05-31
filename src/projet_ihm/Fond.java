@@ -22,7 +22,7 @@ public class Fond {
 		JPanel nord = new JPanel();
 		JPanel sud = new JPanel();
 		JPanel centre = new JPanel();
-
+		
 		// creation de la fenetre du haut, avec le slider
 		FlowLayout flow = new FlowLayout();
 		nord.setLayout(flow);
