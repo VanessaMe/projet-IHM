@@ -1,4 +1,4 @@
-package projet_ihm;
+package fr.lille.iutinfo.kouleurala;
 
 import java.awt.BorderLayout;
 import java.awt.Button;
