@@ -5,7 +5,9 @@ import java.awt.Dimension;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
@@ -42,8 +44,17 @@ public class LocalisationCouleur extends JPanel {
 
 		hexa = new JTextField(couleur.getHexa());
 		codeR = new JTextField("" + couleur.couleur.getRed());
+		JPopupMenu menuContext = new JPopupMenu();
+		JMenuItem t = new JMenuItem(hexa.getActions()[17]);
+		t.setText("Copier");
+		menuContext.add(t);
 		codeV = new JTextField("" + couleur.couleur.getGreen());
 		codeB = new JTextField("" + couleur.couleur.getBlue());
+		codeR.setComponentPopupMenu(menuContext);
+		codeV.setComponentPopupMenu(menuContext);
+		codeB.setComponentPopupMenu(menuContext);
+		hexa.setComponentPopupMenu(menuContext);
+		
 
 		hexa.setEditable(false);
 		codeR.setEditable(false);
