@@ -54,7 +54,6 @@ public class LocalisationCouleur extends JPanel {
 		codeV.setComponentPopupMenu(menuContext);
 		codeB.setComponentPopupMenu(menuContext);
 		hexa.setComponentPopupMenu(menuContext);
-		
 
 		hexa.setEditable(false);
 		codeR.setEditable(false);
@@ -106,16 +105,6 @@ public class LocalisationCouleur extends JPanel {
 		appli.pack();
 	}
 
-	public void selectionner() {
-		// modifier les bordures en dore
-		nivCouleur.setBorder(new LineBorder(new Color(204, 153, 0)));
-		nivGris.setBorder(new LineBorder(new Color(204, 153, 0)));
-		hexa.setBorder(new LineBorder(new Color(204, 153, 0)));
-		codeB.setBorder(new LineBorder(new Color(204, 153, 0)));
-		codeR.setBorder(new LineBorder(new Color(204, 153, 0)));
-		codeV.setBorder(new LineBorder(new Color(204, 153, 0)));
-	}
-
 	public void desactiver() {
 		codeR.setEnabled(false);
 		codeV.setEnabled(false);
@@ -131,5 +120,23 @@ public class LocalisationCouleur extends JPanel {
 		nivCouleur.setBackground(Color.LIGHT_GRAY);
 		nivGris.setBorder(new LineBorder(Color.GRAY));
 		nivGris.setBackground(Color.LIGHT_GRAY);
+	}
+
+	public void surbrillance(boolean b) {
+		if (b) {
+			nivCouleur.setBorder(new LineBorder(new Color(204, 153, 0), 2));
+			nivGris.setBorder(new LineBorder(new Color(204, 153, 0), 2));
+			hexa.setBorder(new LineBorder(new Color(204, 153, 0), 2));
+			codeB.setBorder(new LineBorder(new Color(204, 153, 0), 2));
+			codeR.setBorder(new LineBorder(new Color(204, 153, 0), 2));
+			codeV.setBorder(new LineBorder(new Color(204, 153, 0), 2));
+		} else {
+			nivCouleur.setBorder(new LineBorder(Color.BLACK));
+			nivGris.setBorder(new LineBorder(Color.BLACK));
+			hexa.setBorder(new LineBorder(Color.BLACK));
+			codeB.setBorder(null);
+			codeR.setBorder(null);
+			codeV.setBorder(null);
+		}
 	}
 }

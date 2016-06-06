@@ -18,6 +18,10 @@ public class SelectionEmplacement implements MouseListener {
 	}
 
 	public void mouseClicked(MouseEvent arg0) {
+		if (application.colonneEnCours != null)
+			application.colonneEnCours.surbrillance(false);
+		application.colonneEnCours = colonne;
+		application.colonneEnCours.surbrillance(true);
 		application.choixCouleursSud(colonne);
 	}
 
@@ -30,7 +34,8 @@ public class SelectionEmplacement implements MouseListener {
 	@Override
 	public void mouseExited(MouseEvent arg0) {
 		JPanel s = (JPanel) arg0.getSource();
-		s.setBorder(new LineBorder(Color.BLACK));
+		if (!(application.colonneEnCours != null && application.colonneEnCours.equals(colonne)))
+			s.setBorder(new LineBorder(Color.BLACK));
 	}
 
 	@Override

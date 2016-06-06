@@ -25,14 +25,14 @@ public class Application extends JFrame {
 	JPanel sud = new JPanel();
 	// le tableau sud
 	JPanel tableauCouleurs = new JPanel();
+	LocalisationCouleur colonneEnCours;
 
 	public Application() {
 		// creation de la this du haut, avec le slider
 		FlowLayout flow = new FlowLayout();
 		nord.setLayout(flow);
 
-		JLabel label = new JLabel("Nombre de couleurs :");
-		JLabel nbCouleursChoix = new JLabel("5");
+		JLabel label = new JLabel("Nombre de couleurs : ");
 		JSlider slide = new JSlider();
 		JButton valider = new JButton("Valider");
 		slide.setMaximum(10);
@@ -51,7 +51,6 @@ public class Application extends JFrame {
 			}
 		});
 		nord.add(label);
-		nord.add(nbCouleursChoix);
 		nord.add(slide);
 		nord.add(valider);
 		nord.add(bouton);
@@ -69,7 +68,7 @@ public class Application extends JFrame {
 		choixCouleursSud(null);
 		sud.add(tableauCouleurs);
 		this.getContentPane().add(sud, BorderLayout.SOUTH);
-
+		this.setResizable(false);
 		this.pack();
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -132,8 +131,6 @@ public class Application extends JFrame {
 
 		// Proposition des couleurs
 		if (colonne != null) {
-			System.out.println("nbre couleurs : " + colonne.couleur.listeColor.size());
-			System.out.println("code gris : " + colonne.couleur.gris);
 			// on affiche les couleurs proposees
 			for (int i = 0; i < colonne.couleur.listeColor.size(); i++) {
 				JPanel pan = new JPanel();

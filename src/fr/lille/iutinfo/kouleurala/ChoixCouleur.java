@@ -17,7 +17,6 @@ public class ChoixCouleur implements MouseListener {
 
 	public void mouseClicked(MouseEvent arg0) {
 		JPanel s = (JPanel) arg0.getSource();
-		System.out.println(s.getBackground());
 		colonne.modifier(s.getBackground());
 	}
 

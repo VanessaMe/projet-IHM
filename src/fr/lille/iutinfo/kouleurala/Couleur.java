@@ -2,21 +2,18 @@ package fr.lille.iutinfo.kouleurala;
 
 import java.awt.Color;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Couleur {
 
 	static int num = 0;
 	static ArrayList<Color> COULEURS;
 	ArrayList<Color> listeColor = new ArrayList<Color>();
-	Random r = new Random();
 	int gris;
 	Color couleur;
 
 	public Couleur(int nbre) {
 		this(255, 255, 255);
 		gris = 255 / nbre * num + (255 / nbre) / 2;
-		System.out.println(gris);
 		num++;
 		listeGris();
 	}

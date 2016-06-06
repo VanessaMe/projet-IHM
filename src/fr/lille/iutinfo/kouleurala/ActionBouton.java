@@ -22,7 +22,6 @@ public class ActionBouton implements ActionListener {
 			if (JOptionPane.showOptionDialog(fond, "Les couleurs selectionnées vont être perdues. \n Continuer ?",
 					"Attention", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options,
 					options[0]) == 0) {
-				System.out.println(slide.getValue());
 				fond.choixCouleursCentre(slide.getValue());
 				fond.choixCouleursSud(null);
 				saveValeur = slide.getValue();
